@@ -43,6 +43,7 @@ app.get('/json/main/new-gas-api.json', async (req, res, next) => {
     try {
         const rpc_url = "https://cn.rpc.mainnet.diynova.com";
         const response = await generate_gas_info(rpc_url);
+        console.log(req.url,response)
         res.json(response);
     } catch (error) {
         return next(error)
@@ -53,6 +54,7 @@ app.get('/json/test/new-gas-api.json', async (req, res, next) => {
     try {
         const rpc_url = "https://rpc6.newchain.cloud.diynova.com";
         const response = await generate_gas_info(rpc_url);
+        console.log(req.url,response)
         res.json(response);
     } catch (error) {
         return next(error)
